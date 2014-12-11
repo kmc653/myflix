@@ -20,7 +20,7 @@ describe UsersController do
         expect(User.count).to eq(1)
       end
       
-      it "redirects to the sign in page" do
+      it "redirects to the home page" do
         expect(response).to redirect_to home_path
       end
     end
@@ -45,5 +45,17 @@ describe UsersController do
     end
   end
 
+  describe "GET show" do
+    it_behaves_like "requires sign in" do
+      let(:action) { get :show, id: 3 }
+    end
+
+    it "sets @user" do
+      set_current_user
+      alice = Fabricate(:user)
+      get :show, id: alice.id
+      expect(assigns(:user)).to eq(alice)
+    end
+  end
 
 end
