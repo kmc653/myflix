@@ -10,7 +10,7 @@ gem 'sass-rails'
 gem 'uglifier'
 gem 'jquery-rails'
 gem 'pg'
-gem 'bcrypt-ruby'
+gem 'bcrypt'
 gem 'fabrication'
 gem 'faker'
 
