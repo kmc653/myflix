@@ -11,6 +11,7 @@ Myflix::Application.routes.draw do
   get '/people', to: 'relationships#index'
   get '/forgot_password', to: 'forgot_passwords#new'
   get '/forgot_password_confirmation', to: 'forgot_passwords#confirm'
+  get '/expired_token', to: 'password_resets#expired_token'
   #get '/videos/:title', to: 'videos#show', as: 'video'
   
   resources :videos, only: [:show] do
@@ -24,5 +25,5 @@ Myflix::Application.routes.draw do
   resources :queue_items, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
   resources :forgot_passwords, only: [:create]
-  resources :password_resets, only: [:show]
+  resources :password_resets, only: [:show, :create]
 end
