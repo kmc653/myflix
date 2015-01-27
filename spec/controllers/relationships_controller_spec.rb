@@ -71,7 +71,6 @@ describe RelationshipsController do
       expect(alice.following_relationships.first.leader).to eq(bob)
     end
 
-
     it "does not create a relationship if the current user already follows the leader" do
       alice = Fabricate(:user)
       bob = Fabricate(:user)
