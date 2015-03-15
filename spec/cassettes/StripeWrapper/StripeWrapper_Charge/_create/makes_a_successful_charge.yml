@@ -31,7 +31,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sun, 15 Mar 2015 05:33:21 GMT
+      - Sun, 15 Mar 2015 15:00:03 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -49,7 +49,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_0vZDITI5tDpiqbPq
+      - req_tmFsCbMFgCzZbHpM
       Stripe-Version:
       - '2015-02-18'
       Strict-Transport-Security:
@@ -58,14 +58,14 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "tok_15gUNJE7JwniA027h3bEvZCC",
+          "id": "tok_15gdDjE7JwniA027P6EAuscC",
           "livemode": false,
-          "created": 1426397601,
+          "created": 1426431603,
           "used": false,
           "object": "token",
           "type": "card",
           "card": {
-            "id": "card_15gUNJE7JwniA027FT00dcSR",
+            "id": "card_15gdDjE7JwniA027CqlzQ98v",
             "object": "card",
             "last4": "4242",
             "brand": "Visa",
@@ -89,13 +89,13 @@ http_interactions:
           "client_ip": "114.39.219.198"
         }
     http_version: 
-  recorded_at: Sun, 15 Mar 2015 05:33:21 GMT
+  recorded_at: Sun, 15 Mar 2015 15:00:03 GMT
 - request:
     method: post
     uri: https://api.stripe.com/v1/charges
     body:
       encoding: US-ASCII
-      string: amount=999&currency=usd&card=tok_15gUNJE7JwniA027h3bEvZCC&description=a%20vlaid%20charge
+      string: amount=999&currency=usd&source=tok_15gdDjE7JwniA027P6EAuscC&description=a%20vlaid%20charge
     headers:
       Accept:
       - "*/*; q=0.5, application/xml"
@@ -112,7 +112,7 @@ http_interactions:
         Kai-Min-Changteki-MacBook-Pro.local 12.5.0 Darwin Kernel Version 12.5.0: Sun
         Sep 29 13:33:47 PDT 2013; root:xnu-2050.48.12~1/RELEASE_X86_64 x86_64"}'
       Content-Length:
-      - '88'
+      - '90'
   response:
     status:
       code: 200
@@ -121,7 +121,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sun, 15 Mar 2015 05:33:22 GMT
+      - Sun, 15 Mar 2015 15:00:04 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -139,7 +139,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_xZIZDGIyNMdmaAkb
+      - req_lF3RUeH5tSExLp68
       Stripe-Version:
       - '2015-02-18'
       Strict-Transport-Security:
@@ -148,9 +148,9 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "ch_15gUNKE7JwniA027XKaqxo4I",
+          "id": "ch_15gdDkE7JwniA027lC915wI8",
           "object": "charge",
-          "created": 1426397602,
+          "created": 1426431604,
           "livemode": false,
           "paid": true,
           "status": "succeeded",
@@ -158,7 +158,7 @@ http_interactions:
           "currency": "usd",
           "refunded": false,
           "source": {
-            "id": "card_15gUNJE7JwniA027FT00dcSR",
+            "id": "card_15gdDjE7JwniA027CqlzQ98v",
             "object": "card",
             "last4": "4242",
             "brand": "Visa",
@@ -182,7 +182,7 @@ http_interactions:
             "customer": null
           },
           "captured": true,
-          "balance_transaction": "txn_15gUNKE7JwniA027vB2zqomJ",
+          "balance_transaction": "txn_15gdDkE7JwniA027pv7WYaGi",
           "failure_message": null,
           "failure_code": null,
           "amount_refunded": 0,
@@ -200,10 +200,10 @@ http_interactions:
             "object": "list",
             "total_count": 0,
             "has_more": false,
-            "url": "/v1/charges/ch_15gUNKE7JwniA027XKaqxo4I/refunds",
+            "url": "/v1/charges/ch_15gdDkE7JwniA027lC915wI8/refunds",
             "data": []
           }
         }
     http_version: 
-  recorded_at: Sun, 15 Mar 2015 05:33:22 GMT
+  recorded_at: Sun, 15 Mar 2015 15:00:05 GMT
 recorded_with: VCR 2.9.3

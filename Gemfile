@@ -37,13 +37,14 @@ group :development, :test do
 end
 
 group :test do
-  gem 'database_cleaner', '1.2.0'
+  gem 'database_cleaner'
   gem 'shoulda-matchers'
   gem 'capybara'
   gem 'launchy'
   gem 'capybara-email'
   gem 'vcr'
   gem 'webmock'
+  gem 'selenium-webdriver'
 end
 
 group :production do

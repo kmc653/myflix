@@ -9,7 +9,7 @@ jQuery(function($) {
 
     // Prevent the form from submitting with the default action
     return false;
-  });
+  }); 
 });
 
 function stripeResponseHandler(status, response) {

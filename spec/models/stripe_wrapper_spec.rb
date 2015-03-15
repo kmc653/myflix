@@ -16,7 +16,7 @@ describe StripeWrapper do
 
         response = StripeWrapper::Charge.create(
           amount: 999,
-          card: token,
+          source: token,
           description: "a vlaid charge"
         )
 
