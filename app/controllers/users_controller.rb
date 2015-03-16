@@ -18,13 +18,14 @@ class UsersController < ApplicationController
         handle_invitation
         AppMailer.send_welcome_email(@user).deliver
         session[:user_id] = @user.id
-        flash[:notice] = "You are registered."
+        flash[:notice] = "Thank you for registering with Myflix."
         redirect_to home_path
       else
         flash[:error] = charge.error_message
         render :new
       end
     else
+      flash[:error] = "Invalid user information. Please check the errors below."
       render :new
     end
   end
