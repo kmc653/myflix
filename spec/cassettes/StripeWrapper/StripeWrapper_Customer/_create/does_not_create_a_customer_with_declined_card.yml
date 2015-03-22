@@ -31,7 +31,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sun, 22 Mar 2015 14:01:26 GMT
+      - Sun, 22 Mar 2015 14:01:31 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -49,7 +49,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_Z0mIDMsJuS967ogt
+      - req_Zea3F1QksBfSpiuP
       Stripe-Version:
       - '2015-02-18'
       Strict-Transport-Security:
@@ -58,14 +58,14 @@ http_interactions:
       encoding: UTF-8
       string: |
         {
-          "id": "tok_15j9dqE7JwniA027RfSf3P7q",
+          "id": "tok_15j9dvE7JwniA027Iedr3mKn",
           "livemode": false,
-          "created": 1427032886,
+          "created": 1427032891,
           "used": false,
           "object": "token",
           "type": "card",
           "card": {
-            "id": "card_15j9dqE7JwniA02747yGE604",
+            "id": "card_15j9dvE7JwniA0277JqNo44l",
             "object": "card",
             "last4": "0002",
             "brand": "Visa",
@@ -89,13 +89,13 @@ http_interactions:
           "client_ip": "61.227.170.238"
         }
     http_version: 
-  recorded_at: Sun, 22 Mar 2015 14:01:26 GMT
+  recorded_at: Sun, 22 Mar 2015 14:01:31 GMT
 - request:
     method: post
-    uri: https://api.stripe.com/v1/charges
+    uri: https://api.stripe.com/v1/customers
     body:
       encoding: US-ASCII
-      string: amount=999&currency=usd&source=tok_15j9dqE7JwniA027RfSf3P7q&description=an%20invlaid%20charge
+      string: card=tok_15j9dvE7JwniA027Iedr3mKn&plan=base&email=marilie.rohan%40romaguera.net
     headers:
       Accept:
       - "*/*; q=0.5, application/xml"
@@ -112,7 +112,7 @@ http_interactions:
         Kai-Min-Changteki-MacBook-Pro.local 12.5.0 Darwin Kernel Version 12.5.0: Sun
         Sep 29 13:33:47 PDT 2013; root:xnu-2050.48.12~1/RELEASE_X86_64 x86_64"}'
       Content-Length:
-      - '93'
+      - '79'
   response:
     status:
       code: 402
@@ -121,11 +121,11 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sun, 22 Mar 2015 14:01:27 GMT
+      - Sun, 22 Mar 2015 14:01:32 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '162'
+      - '117'
       Connection:
       - keep-alive
       Access-Control-Allow-Credentials:
@@ -139,7 +139,7 @@ http_interactions:
       Cache-Control:
       - no-cache, no-store
       Request-Id:
-      - req_u5SfSytaxZDkCZlv
+      - req_UtA8W1vUScI36Fgx
       Stripe-Version:
       - '2015-02-18'
     body:
@@ -149,10 +149,9 @@ http_interactions:
           "error": {
             "message": "Your card was declined.",
             "type": "card_error",
-            "code": "card_declined",
-            "charge": "ch_15j9dqE7JwniA027EfK0qlvT"
+            "code": "card_declined"
           }
         }
     http_version: 
-  recorded_at: Sun, 22 Mar 2015 14:01:27 GMT
+  recorded_at: Sun, 22 Mar 2015 14:01:33 GMT
 recorded_with: VCR 2.9.3
