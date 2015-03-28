@@ -56,4 +56,12 @@ describe User do
       expect(kevin.follows?(kevin)).to be_falsey
     end
   end
+
+  describe "deactivate!" do
+    it "deactivates an active user" do
+      kevin = Fabricate(:user, active: true)
+      kevin.deactivate!
+      expect(kevin).not_to be_active
+    end
+  end
 end
