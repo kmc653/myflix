@@ -7,6 +7,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    binding.pry
     result = UserSignup.new(@user).sign_up(params[:stripeToken], params[:invitation_token])
 
     if result.successful?
