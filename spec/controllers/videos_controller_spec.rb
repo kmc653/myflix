@@ -26,16 +26,19 @@ describe VideosController do
     end
   end
 
-  describe "POST search" do
+  describe "GET search" do
     it "sets @results for authenticated users" do
+      Video.reindex
+      Video.searchkick_index.refresh
       session[:user_id] = Fabricate(:user).id
-      futurama = Fabricate(:video, title: 'Futurama')
-      post :search, search_term: 'rama'
-      expect(assigns(:results)).to eq([futurama])
+      futurama = Video.create(title: 'Futurama', description: 'asdf')
+      futurama.save
+      get :search, search_term: 'Futurama'
+      expect(assigns(:results).first).to eq(futurama)
     end
     it "redirects to sign in page for the unauthenticated users" do
       futurama = Fabricate(:video, title: 'Futurama')
-      post :search, search_term: 'rama'
+      get :search, search_term: 'rama'
       expect(response).to redirect_to sign_in_path
     end
   end

@@ -12,6 +12,10 @@ class VideosController < ApplicationController
   end
 
   def search
-    @results = Video.search_by_title(params[:search_term])
+    if params[:search_term].present?
+      @results = Video.search(params[:search_term])
+    else
+      @results = Video.all
+    end
   end
 end

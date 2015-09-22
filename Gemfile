@@ -22,6 +22,7 @@ gem 'stripe'
 gem 'stripe_event'
 gem 'figaro'
 gem 'draper'
+gem 'searchkick'
 
 
 group :development do
