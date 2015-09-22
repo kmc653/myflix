@@ -7,7 +7,8 @@
         %header
           %h3= @video.title
           %span Rating:
-          = @video.rating
+          / = @video.rating
+          .star-rating{"data-score" => "#{@video.rating}"}
         %p= @video.description
         .actions
           %a.btn.btn-primary(href="#{@video.video_url}") Watch Now
@@ -22,7 +23,8 @@
             %label Rate this video
             .row
               .col-sm-3
-                = f.select :rating, options_for_video_reviews
+                / = f.select :rating, options_for_video_reviews
+                #star-rating
           .form-group
             %label Write Review
             .row
@@ -38,9 +40,26 @@
           %article.review
             %li.row
               .col-sm-2
-                %span Rating: #{review.rating} / 5
+                / %span Rating: #{review.rating} / 5
+                .star-rating{"data-score" => "#{review.rating}"}
                 %p 
                   by
                   = link_to review.user.full_name, review.user
               .col-sm-8
                 %p= review.content
+
+:javascript
+  $('.star-rating').raty({
+    path: '/assets',
+    number: 5,
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score')
+    }
+  });
+  
+  $('#star-rating').raty({
+    path: '/assets',
+    number: 5,
+    scoreName: 'review[rating]'
+  });

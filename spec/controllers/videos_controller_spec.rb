@@ -28,8 +28,6 @@ describe VideosController do
 
   describe "GET search" do
     it "sets @results for authenticated users" do
-      Video.reindex
-      Video.searchkick_index.refresh
       session[:user_id] = Fabricate(:user).id
       futurama = Video.create(title: 'Futurama', description: 'asdf')
       futurama.save
