@@ -22,8 +22,8 @@ gem 'stripe'
 gem 'stripe_event'
 gem 'figaro'
 gem 'draper'
-gem 'searchkick'
-
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
 
 group :development do
   gem 'thin'

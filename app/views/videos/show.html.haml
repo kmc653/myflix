@@ -6,7 +6,6 @@
       .video_info.col-sm-3
         %header
           %h3= @video.title
-          %span Rating:
           / = @video.rating
           .star-rating{"data-score" => "#{@video.rating}"}
         %p= @video.description
@@ -34,7 +33,7 @@
           %input(type="submit" value="Submit" class="btn")
           = link_to "Cancel", @video
       %header
-        %h3 User Reviews (#{@reviews.count})
+        %h3 Reviews (#{@reviews.count})
       %ul
         - @reviews.each do |review|
           %article.review

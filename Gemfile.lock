@@ -90,6 +90,11 @@ GEM
       elasticsearch-transport (= 1.0.13)
     elasticsearch-api (1.0.13)
       multi_json
+    elasticsearch-model (0.1.7)
+      activesupport (> 3)
+      elasticsearch (> 0.4)
+      hashie
+    elasticsearch-rails (0.1.7)
     elasticsearch-transport (1.0.13)
       faraday
       multi_json
@@ -210,10 +215,6 @@ GEM
       sass (~> 3.2.0)
       sprockets (~> 2.8, <= 2.11.0)
       sprockets-rails (~> 2.0)
-    searchkick (0.9.1)
-      activemodel
-      elasticsearch (>= 1)
-      hashie
     selenium-webdriver (2.45.0)
       childprocess (~> 0.5)
       multi_json (~> 1.0)
@@ -288,6 +289,8 @@ DEPENDENCIES
   coffee-rails
   database_cleaner
   draper
+  elasticsearch-model
+  elasticsearch-rails
   fabrication
   faker
   figaro
@@ -304,7 +307,6 @@ DEPENDENCIES
   rails_12factor
   rspec-rails (= 2.99)
   sass-rails
-  searchkick
   selenium-webdriver
   shoulda-matchers
   sidekiq

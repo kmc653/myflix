@@ -1,3 +1,17 @@
+/ - if !logged_in?
+/   %p#intro
+/     Share Your Favorite Movies
+/     %br/
+/     %span
+/       You can create movies you want to share and leave some reviews.
+/ -else
+/   %p#intro
+/     Hello,
+/     = current_user.full_name
+/     %br/
+/     %span
+/       Share the movies that others would love them as well.
+
 - @categories.each do |category|
   %article.video_category
     %header
