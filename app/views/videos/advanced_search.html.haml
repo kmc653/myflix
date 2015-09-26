@@ -15,10 +15,10 @@
       .row.average_rating_label Average Rating
       = label_tag :rating_from, "From:", class: "col-sm-1 control-label"
       .col-sm-2
-        = select_tag :rating_from, options_for_select((10..50).map { |num| num / 10.0 }, params[:rating_from]), prompt: "-", class: "form-control"
+        = select_tag :rating_from, options_for_select((1..5), params[:rating_from]), prompt: "-", class: "form-control"
       = label_tag :rating_to, "To:", class: "col-sm-1 control-label"
       .col-sm-2
-        = select_tag :rating_to, options_for_select((10..50).map { |num| num / 10.0 }, params[:rating_to]), prompt: "-", class: "form-control"
+        = select_tag :rating_to, options_for_select((1..5), params[:rating_to]), prompt: "-", class: "form-control"
     .form-group
       .col-sm-6
         = button_tag(type: "submit", class: "btn btn-primary") do
@@ -34,5 +34,5 @@
             %img(src="#{video.small_cover_url}" alt="video cover")
           .video_body.col-sm-10
             %header
-              %h3= video.title
+              %h3= link_to "#{video.title}", video_path(video)
             %p.video_description= video.description
