@@ -16,5 +16,7 @@ module Myflix
       g.template_engine :haml
     end
     config.autoload_paths << "#{Rails.root}/lib"
+
+    Elasticsearch::Model.client = Elasticsearch::Client.new host: ENV['SEARCHBOX_SSL_URL']
   end
 end

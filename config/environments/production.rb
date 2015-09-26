@@ -28,4 +28,5 @@ Myflix::Application.configure do
     password:             ENV['MAILGUN_SMTP_PASSWORD'],
     authentication:       'plain',
   }
+  Elasticsearch::Model.client = Elasticsearch::Client.new host: ENV['SEARCHBOX_SSL_URL']
 end
